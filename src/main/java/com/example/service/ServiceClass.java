@@ -3,6 +3,7 @@ package com.example.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
@@ -34,15 +35,15 @@ public class ServiceClass
 		}
 		return l;
 	}
-	public List<?> getFirstData(int num)
+	public String getFirstData(int num)
 	{
 		return repository.findbyAssending(num);
 	}
-	public List<?> getFirst10data()
+	public List<Document> getFirst10data(int a)
 	{
-		return repository.return10Doc();
+		return repository.return10Doc(a);
 	}
-	public List<?> getLatestUpdated()
+	public String getLatestUpdated()
 	{
 		return repository.returnLatestUpdated();
 	}

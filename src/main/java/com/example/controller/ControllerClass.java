@@ -2,6 +2,7 @@ package com.example.controller;
 
 import java.util.List;
 
+import org.bson.Document;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -64,17 +65,17 @@ public class ControllerClass
 		}
 	}
 	@GetMapping("/getOneModel/{num}")
-	public List<?> sortByName(@PathVariable("num") int num)
+	public String sortByName(@PathVariable("num") int num)
 	{
 		return service.getFirstData(num);
 	}
-	@GetMapping("/get10Models")
-	public List<?> get10models()
+	@GetMapping("/get10Models/{num}")
+	public List<Document> get10models(@PathVariable("num") int num)
 	{
-		return service.getFirst10data();
+		return service.getFirst10data(num);
 	}
 	@GetMapping("/getLatestByDate")
-	public List<?> getLatestDocByDate()
+	public String getLatestDocByDate()
 	{
 		return service.getLatestUpdated();
 	}
