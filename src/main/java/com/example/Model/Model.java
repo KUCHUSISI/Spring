@@ -14,21 +14,22 @@ public class Model
 	String firstName;
 	String lastName;
 	String college;
-	@CreatedDate
-	LocalDate date=LocalDate.now();
-	public LocalDate getDate() {
+	String date=LocalDate.now().toString();
+	
+	public String getDate()
+	{
 		return date;
 	}
 	public int getId() {
 		return id;
 	}
-	public Model(int id, String firstName, String lastName, String college,LocalDate date) {
+	public Model(int id, String firstName, String lastName, String college,String date) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.college = college;
-		this.date=LocalDate.now();
+		this.date=LocalDate.now().toString();
 	}
 	public Model() {
 		super();
@@ -44,6 +45,9 @@ public class Model
 	}
 	public String getLastName() {
 		return lastName;
+	}
+	public void setDate(String date) {
+		this.date = date;
 	}
 	public void setLastName(String lastName) {
 		this.lastName = lastName;

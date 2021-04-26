@@ -47,4 +47,8 @@ public class ServiceClass
 	{
 		return repository.returnLatestUpdated();
 	}
+	public void getData()
+	{
+		
+	}
 }

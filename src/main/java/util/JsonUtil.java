@@ -11,14 +11,15 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import ch.qos.logback.classic.Logger;
+import pojo.Conversion;
 
 public class JsonUtil 
 {
 	static Logger logger=(Logger) LoggerFactory.getLogger(ControllerClass.class);	
-		public static String getJackson2SerializedObject(Object object, Include inclusion)
+		public static String getJackson2SerializedObject(Object object, Include class1)
 		{
 		ObjectMapper om = new ObjectMapper();
-		om.setSerializationInclusion(inclusion);
+		om.setSerializationInclusion(class1);
 		try {
 			return om.writeValueAsString(object);
 		} catch (JsonGenerationException e) {
